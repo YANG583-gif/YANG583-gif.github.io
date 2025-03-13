@@ -91,11 +91,51 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        
+        <p>1.在app.json中配置tabbber</p>
+<p><img src="/../imgs/image-20250309205724378.png" alt="image-20250309205724378"></p>
+<p><img src="/../imgs/image-20250309205851382.png" alt="image-20250309205851382"></p>
+<p>2.在一个页面中自行实现tabber</p>
+<p>js</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">Page(&#123;</span><br><span class="line"></span><br><span class="line">  /**</span><br><span class="line">   * 页面的初始数据</span><br><span class="line">   */</span><br><span class="line">  data: &#123;</span><br><span class="line">    show: 0</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  tap1()&#123;</span><br><span class="line">    this.setData(&#123;</span><br><span class="line">      show:1</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line">  tap2()&#123;</span><br><span class="line">    this.setData(&#123;</span><br><span class="line">      show:2</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line">  tap3()&#123;</span><br><span class="line">    this.setData(&#123;</span><br><span class="line">      show:3</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+
+
+
+<p>wxml</p>
+<pre><code>&lt;view class=&quot;page1&quot;&gt;
+
+ &lt;view class=&quot;page2&quot;&gt;
+  &lt;text bind:tap=&quot;tap1&quot;&gt;首页&lt;/text&gt;
+ &lt;/view&gt;
+ &lt;view class=&quot;page3&quot;&gt;
+  &lt;text bind:tap=&quot;tap2&quot; &gt;订单&lt;/text&gt;
+ &lt;/view&gt;
+ &lt;view class=&quot;page4&quot;&gt;
+  &lt;text bind:tap=&quot;tap3&quot;&gt;我的&lt;/text&gt;
+ &lt;/view&gt;
+ 
+&lt;/view&gt;
+//用bind:tap
+
+&lt;view wx:if=&quot;&#123;&#123;show==1&#125;&#125;&quot;&gt;
+//点击&quot;tap1&quot;出现的内容
+ &lt;/view&gt;
+
+ &lt;view wx:if=&quot;&#123;&#123;show==2&#125;&#125;&quot;&gt;
+ //点击&quot;tap2&quot;出现的内容
+ &lt;/view&gt;
+
+ &lt;view wx:if=&quot;&#123;&#123;show==3&#125;&#125;&quot;&gt;
+//点击&quot;tap3&quot;出现的内容
+ &lt;/view&gt;
+</code></pre>
+<p>wxss</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">.page1&#123;</span><br><span class="line">  background-color: rgb(230, 208, 86);</span><br><span class="line">  display: flex;</span><br><span class="line">  flex-direction: row;</span><br><span class="line">  justify-content: space-around;</span><br><span class="line">  position: fixed;</span><br><span class="line">  bottom: 0;</span><br><span class="line">  width: 100%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/03/09/3-9%E7%AC%94%E8%AE%B0/" data-id="cm86yk3400000n0v8gv3pagjy" data-title="3.9笔记" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/03/09/3-9%E7%AC%94%E8%AE%B0/" data-id="cm86yofei0002x8v8bhdw06rv" data-title="3.9笔记" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -144,7 +184,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/03/09/%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0%E6%8C%87%E5%8D%97/" data-id="cm86yk3460005n0v81t5w4bem" data-title="图片上传指南" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/03/09/%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0%E6%8C%87%E5%8D%97/" data-id="cm86yofeo0004x8v8ct941qp7" data-title="图片上传指南" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -184,7 +224,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/02/14/chenge-second-blog/" data-id="cm86yk3430002n0v823so24ww" data-title="chenge-second-blog" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/02/14/chenge-second-blog/" data-id="cm86yofep0005x8v88t8l1od9" data-title="chenge-second-blog" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -227,7 +267,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/01/20/chenge-first-blog/" data-id="cm86yk3440003n0v8bhk340v8" data-title="chenge-first-blog" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/01/20/chenge-first-blog/" data-id="cm86yofef0001x8v83d384puz" data-title="chenge-first-blog" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -278,7 +318,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/01/20/hello-world/" data-id="cm86yk3450004n0v8dgqm6clj" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/01/20/hello-world/" data-id="cm86yofen0003x8v88ehq2rmw" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
