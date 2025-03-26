@@ -69,6 +69,51 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-3-26笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/03/26/3-26%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time class="dt-published" datetime="2025-03-26T09:02:13.000Z" itemprop="datePublished">2025-03-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/03/26/3-26%E7%AC%94%E8%AE%B0/">3.26笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><img src="/../imgs/image-20250326173135779.png" alt="image-20250326173135779"></p>
+<p>思路：将图片<image>和<text>放在同一个<text>中</p>
+<p>然后在对应的样式文件（<code>.wxss</code>）中添加以下样式来控制图片和文字的布局</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;view <span class="keyword">class</span>=<span class="string">&quot;page1&quot;</span>&gt;</span><br><span class="line"> <span class="language-xml"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;page2&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"> <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;icon-text-container&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"> <span class="tag">&lt;<span class="name">image</span> <span class="attr">class</span>=<span class="string">&quot;icon&quot;</span> <span class="attr">src</span>=<span class="string">&quot;/pages/image/mb c.png&quot;</span> <span class="attr">mode</span>=<span class="string">&quot;&quot;</span>/&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">text</span> <span class="attr">bind:tap</span>=<span class="string">&quot;tap1&quot;</span>&gt;</span>首页<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span></span><br><span class="line"> <span class="language-xml"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;page3&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;icon-text-container&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">image</span> <span class="attr">class</span>=<span class="string">&quot;icon&quot;</span> <span class="attr">src</span>=<span class="string">&quot;/pages/image/bjl c.png&quot;</span> <span class="attr">mode</span>=<span class="string">&quot;&quot;</span>/&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">text</span> <span class="attr">bind:tap</span>=<span class="string">&quot;tap2&quot;</span> &gt;</span>订单<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"> <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">.<span class="property">page1</span>&#123;</span><br><span class="line">  background-<span class="attr">color</span>: <span class="title function_">rgb</span>(<span class="number">230</span>, <span class="number">208</span>, <span class="number">86</span>);</span><br><span class="line">  <span class="attr">display</span>: flex;</span><br><span class="line">  flex-<span class="attr">direction</span>: row;</span><br><span class="line">  justify-<span class="attr">content</span>: space-around;</span><br><span class="line">  <span class="attr">position</span>: fixed;</span><br><span class="line">  <span class="attr">bottom</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attr">width</span>: <span class="number">100</span>%;</span><br><span class="line">&#125;</span><br><span class="line"> .<span class="property">icon</span>-text-container &#123;</span><br><span class="line">    <span class="attr">display</span>: flex;</span><br><span class="line">    flex-<span class="attr">direction</span>: column;</span><br><span class="line">    align-<span class="attr">items</span>: center;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line"> .<span class="property">icon</span> &#123;</span><br><span class="line">    <span class="attr">width</span>: 30px;  <span class="comment">/* 调整图片宽度 */</span></span><br><span class="line">    <span class="attr">height</span>: 30px; <span class="comment">/* 调整图片高度 */</span></span><br><span class="line">    margin-<span class="attr">right</span>: 1px; <span class="comment">/* 调整图片和文字之间的间距 */</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/03/26/3-26%E7%AC%94%E8%AE%B0/" data-id="cm8pq8v9o0002iov8autadhie" data-title="3.26笔记" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-3-9笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2025/03/09/3-9%E7%AC%94%E8%AE%B0/" class="article-date">
@@ -128,14 +173,27 @@
 //点击&quot;tap3&quot;出现的内容
  &lt;/view&gt;
 </code></pre>
-<p>wxss</p>
+<p>​<br>wxss</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">.page1&#123;</span><br><span class="line">  background-color: rgb(230, 208, 86);</span><br><span class="line">  display: flex;</span><br><span class="line">  flex-direction: row;</span><br><span class="line">  justify-content: space-around;</span><br><span class="line">  position: fixed;</span><br><span class="line">  bottom: 0;</span><br><span class="line">  width: 100%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+
+
+<p>3.以下是一些关于 <code>overflow</code> 属性的详细说明：</p>
+<ul>
+<li><p><strong>visible</strong>: 默认值，内容不会被裁剪，会呈现在元素框外。</p>
+</li>
+<li><p><strong>hidden</strong>: 内容会被裁剪，并且不会显示滚动条。</p>
+<p><img src="/../imgs/image-20250319194301576.png" alt="image-20250319194301576"></p>
+</li>
+<li><p><strong>scroll</strong>: 内容会被裁剪，并且总是显示滚动条。</p>
+<p><img src="/../imgs/image-20250319194420819.png" alt="image-20250319194420819"></p>
+</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/03/09/3-9%E7%AC%94%E8%AE%B0/" data-id="cm86yofei0002x8v8bhdw06rv" data-title="3.9笔记" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/03/09/3-9%E7%AC%94%E8%AE%B0/" data-id="cm8pq8v9m0001iov8hw5ddzuk" data-title="3.9笔记" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -184,7 +242,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/03/09/%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0%E6%8C%87%E5%8D%97/" data-id="cm86yofeo0004x8v8ct941qp7" data-title="图片上传指南" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/03/09/%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0%E6%8C%87%E5%8D%97/" data-id="cm8pq8v9q0006iov833f80tlw" data-title="图片上传指南" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -224,7 +282,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/02/14/chenge-second-blog/" data-id="cm86yofep0005x8v88t8l1od9" data-title="chenge-second-blog" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/02/14/chenge-second-blog/" data-id="cm8pq8v9p0004iov86v178m7s" data-title="chenge-second-blog" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -267,7 +325,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/01/20/chenge-first-blog/" data-id="cm86yofef0001x8v83d384puz" data-title="chenge-first-blog" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/01/20/chenge-first-blog/" data-id="cm8pq8v9q0005iov8cxizfguv" data-title="chenge-first-blog" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -318,7 +376,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/01/20/hello-world/" data-id="cm86yofen0003x8v88ehq2rmw" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/01/20/hello-world/" data-id="cm8pq8v9p0003iov8d5bphrlm" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -361,6 +419,10 @@
       <ul>
         
           <li>
+            <a href="/2025/03/26/3-26%E7%AC%94%E8%AE%B0/">3.26笔记</a>
+          </li>
+        
+          <li>
             <a href="/2025/03/09/3-9%E7%AC%94%E8%AE%B0/">3.9笔记</a>
           </li>
         
@@ -374,10 +436,6 @@
         
           <li>
             <a href="/2025/01/20/chenge-first-blog/">chenge-first-blog</a>
-          </li>
-        
-          <li>
-            <a href="/2025/01/20/hello-world/">Hello World</a>
           </li>
         
       </ul>
