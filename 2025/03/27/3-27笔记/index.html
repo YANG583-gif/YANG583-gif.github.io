@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>3.27笔记 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="1.数据绑定： 利用双大括号可以访问数据：在data中命名的数据才有用（data中的属性会被前端访问到） data里面可以存储 字符串：使用双引号  ” “ 数组对象：找到数组里的某一个 array[0]是第一个 对象：找到某一个属性object{ }    12345data:&#123;     title:&quot;微信小程序开发&quot;，    obj:&#123; name:&amp;qu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="3.27笔记">
+<meta property="og:url" content="http://example.com/2025/03/27/3-27%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1.数据绑定： 利用双大括号可以访问数据：在data中命名的数据才有用（data中的属性会被前端访问到） data里面可以存储 字符串：使用双引号  ” “ 数组对象：找到数组里的某一个 array[0]是第一个 对象：找到某一个属性object{ }    12345data:&#123;     title:&quot;微信小程序开发&quot;，    obj:&#123; name:&amp;qu">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/imgs/image-20250328192701408.png">
+<meta property="article:published_time" content="2025-03-27T12:56:43.000Z">
+<meta property="article:modified_time" content="2025-03-28T12:57:29.068Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/imgs/image-20250328192701408.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-3-27笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/03/27/3-27%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time class="dt-published" datetime="2025-03-27T12:56:43.000Z" itemprop="datePublished">2025-03-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      3.27笔记
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>1.数据绑定：</p>
+<p>利用双大括号可以访问数据：在data中命名的数据才有用（data中的属性会被前端访问到）</p>
+<p>data里面可以存储</p>
+<p>字符串：使用双引号  ” “</p>
+<p>数组对象：找到数组里的某一个 array[0]是第一个</p>
+<p>对象：找到某一个属性object{ }   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">data:&#123; </span><br><span class="line">    title:<span class="string">&quot;微信小程序开发&quot;</span>，</span><br><span class="line">    obj:&#123; name:<span class="string">&quot;姓名&quot;</span>，age:<span class="number">18</span>,sex:<span class="string">&quot;性别&quot;</span>&#125;,</span><br><span class="line">    listArr:[<span class="string">&quot;平面设计&quot;</span>,<span class="string">&quot;设计&quot;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;view&gt; &#123;&#123;listArr[<span class="number">0</span>]&#125;&#125;&lt;/view&gt;</span><br><span class="line">&lt;view&gt;&#123;&#123;title&#125;&#125;&lt;/view&gt;</span><br><span class="line">&lt;view&gt;&#123;&#123;obj.name&#125;&#125;&lt;/view&gt;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/../imgs/image-20250328192701408.png" alt="image-20250328192701408"></p>
+<ol start="2">
+<li><p>if条件渲染</p>
+<p>执行代码必须用双大括号。当使用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wx:if，wx:elif和wx:else时</span><br></pre></td></tr></table></figure>
+
+<p>它们必须包裹在同一个父元素内部。且必须临近。</p>
+<p>判断的方法：</p>
+<p>（1）简单的true和false</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;view wx:<span class="keyword">if</span>=<span class="string">&quot;&#123;&#123;true&#125;&#125;&quot;</span>&gt; 文字 &lt;/view&gt;</span><br><span class="line">&lt;view wx:<span class="keyword">if</span>=<span class="string">&quot;&#123;&#123;false&#125;&#125;&quot;</span>&gt; 文字 &lt;/view&gt;</span><br></pre></td></tr></table></figure>
+
+<p>（2）利用计算进行真假判断</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;view wx:<span class="keyword">if</span>=<span class="string">&quot;&#123;&#123;1&lt;2&#125;&#125;&quot;</span>&gt; 文字 &lt;/view&gt;</span><br><span class="line">&lt;view wx:<span class="keyword">if</span>=<span class="string">&quot;&#123;&#123;1&gt;2&#125;&#125;&quot;</span>&gt; 文字 &lt;/view&gt;</span><br></pre></td></tr></table></figure>
+
+<p> (3)“&#x3D; &#x3D;”为判断等于符号</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;view wx:<span class="keyword">if</span>=<span class="string">&quot;&#123;&#123;type === 1&#125;&#125;&quot;</span>&gt;男&lt;/view&gt;</span><br><span class="line">&lt;view wx:elif=<span class="string">&quot;&#123;&#123;type === 2&#125;&#125;&quot;</span>&gt;女&lt;/view&gt;</span><br><span class="line">&lt;view wx:<span class="keyword">else</span>&gt;保密&lt;/view&gt;</span><br></pre></td></tr></table></figure>
+
+<p>（4）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;view wx:<span class="keyword">if</span>=<span class="string">&quot;&#123;&#123;condition1&#125;&#125;&quot;</span>&gt;条件<span class="number">1</span>内容&lt;/view&gt;</span><br><span class="line">&lt;view wx:elif=<span class="string">&quot;&#123;&#123;condition2&#125;&#125;&quot;</span>&gt;条件<span class="number">2</span>内容&lt;/view&gt;</span><br><span class="line">&lt;view wx:<span class="keyword">else</span>&gt;其他内容&lt;/view&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>3.结合<code>&lt;block&gt;</code>使用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">条件渲染是WXML中一种常用的模板语法，用于根据条件动态地控制页面元素的显示与隐藏。当需要一次性控制多个组件的展示与隐藏时，可以结合使用`&lt;block&gt;`标签和wx:if属性。block并不是一个组件，它只是一个包裹性质的容器，仍然可以保持原有的同级结构，不会在页面中做任何渲染。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;block wx:<span class="keyword">if</span>=<span class="string">&quot;&#123;&#123;isShowContent&#125;&#125;&quot;</span>&gt;</span><br><span class="line">    &lt;!-- 当isShowContent为<span class="literal">true</span>时，显示以下&lt;view&gt; --&gt;</span><br><span class="line">    &lt;view class=<span class="string">&quot;content&quot;</span>&gt;</span><br><span class="line">      &lt;text&gt;这是一段根据条件显示的文本内容。&lt;/text&gt;</span><br><span class="line">    &lt;/view&gt;</span><br><span class="line">  &lt;/block&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// index.js</span></span><br><span class="line">Page(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    <span class="comment">// 初始化isShowContent为true，可以根据需要更改为false</span></span><br><span class="line">    isShowContent: <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>4.注释Ctrl+&#x2F;</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/03/27/3-27%E7%AC%94%E8%AE%B0/" data-id="cm8ssfeeu0002s4v8a4j5at43" data-title="3.27笔记" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2025/03/26/3-26%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">3.26笔记</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/03/">March 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/02/">February 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/01/">January 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/03/27/3-27%E7%AC%94%E8%AE%B0/">3.27笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/26/3-26%E7%AC%94%E8%AE%B0/">3.26笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/09/3-9%E7%AC%94%E8%AE%B0/">3.9笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/09/%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0%E6%8C%87%E5%8D%97/">图片上传指南</a>
+          </li>
+        
+          <li>
+            <a href="/2025/02/14/chenge-second-blog/">chenge-second-blog</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
