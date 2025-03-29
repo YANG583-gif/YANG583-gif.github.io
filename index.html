@@ -69,6 +69,70 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-3-28笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/03/28/3-28%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time class="dt-published" datetime="2025-03-28T13:09:28.000Z" itemprop="datePublished">2025-03-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/03/28/3-28%E7%AC%94%E8%AE%B0/">3.28笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>1.列表渲染</p>
+<ul>
+<li><p>wx:for只能循环数组</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;view wx:<span class="keyword">for</span>=<span class="string">&quot;&#123;&#123;array&#125;&#125;&quot;</span>&gt;<span class="comment">//次数</span></span><br><span class="line">  &#123;&#123;index&#125;&#125;: &#123;&#123;item.message&#125;&#125;</span><br><span class="line">&lt;/view&gt;</span><br><span class="line">    </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Page</span>(&#123;</span><br><span class="line">  <span class="attr">data</span>: &#123;</span><br><span class="line">    <span class="attr">array</span>: [&#123;</span><br><span class="line">      <span class="attr">message</span>: <span class="string">&#x27;foo&#x27;</span>,</span><br><span class="line">    &#125;, &#123;</span><br><span class="line">      <span class="attr">message</span>: <span class="string">&#x27;bar&#x27;</span></span><br><span class="line">    &#125;]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>数组里可以包字符和对象</li>
+</ul>
+</li>
+<li><p>使用 <code>wx:for-item</code> 可以指定数组当前元素的变量名，（数组中的每一项分别拿出来，一个item表示一个对象，可以是一个字符串，一个双括号-要拿到对象里的某个数据就要写出对象里属性的名称。）</p>
+<p>使用 <code>wx:for-index</code> 可以指定数组当前下标的变量名。(索引值 0，1，2…..)要把index放到双括号里</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;view wx:<span class="keyword">for</span>=<span class="string">&quot;&#123;&#123;50&#125;&#125;&quot;</span>&gt;&#123;&#123;index&#125;&#125;文本&lt;/view&gt;</span><br><span class="line"><span class="comment">//想从几开始就在index后面加几&#123;&#123;index+1&#125;&#125;（比如从1开始）</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><pre><code class="java">&lt;view wx:for=&quot;&#123;&#123;array&#125;&#125;&quot; wx:for-index=&quot;idx&quot; wx:for-item=&quot;itemName&quot;&gt;
+  &#123;&#123;idx&#125;&#125;: &#123;&#123;itemName.message&#125;&#125;
+&lt;/view&gt;
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">  也可以重新命名</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">- 需要使用 `wx:key` 来指定列表中项目的唯一的标识符。如果仍有问题就用索引值。在`wx:for` 也可以嵌套时尤为重要。</span><br><span class="line"></span><br><span class="line">  ```java</span><br><span class="line">  &lt;view wx:for=&quot;&#123;&#123;numberArray&#125;&#125;&quot; wx:key=&quot;*this&quot;&gt;</span><br><span class="line">    &#123;&#123;idx&#125;&#125;: &#123;&#123;itemName.message&#125;&#125;</span><br><span class="line">  &lt;/view&gt;</span><br></pre></td></tr></table></figure>
+
+![image-20250329105531942](../imgs/image-20250329105531942.png)
+</code></pre>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/03/28/3-28%E7%AC%94%E8%AE%B0/" data-id="cm8tmig0t0005bcv8ab769pyb" data-title="3.28笔记" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-3-27笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2025/03/27/3-27%E7%AC%94%E8%AE%B0/" class="article-date">
@@ -133,7 +197,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/03/27/3-27%E7%AC%94%E8%AE%B0/" data-id="cm8ssp22r0002vsv89bz931gt" data-title="3.27笔记" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/03/27/3-27%E7%AC%94%E8%AE%B0/" data-id="cm8tmig0s0003bcv87jms5cmg" data-title="3.27笔记" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -178,7 +242,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/03/26/3-26%E7%AC%94%E8%AE%B0/" data-id="cm8ssp22p0001vsv8g8a39m4f" data-title="3.26笔记" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/03/26/3-26%E7%AC%94%E8%AE%B0/" data-id="cm8tmig0o0000bcv8c1y33oou" data-title="3.26笔记" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -269,7 +333,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/03/09/3-9%E7%AC%94%E8%AE%B0/" data-id="cm8ssp22s0003vsv811eq9loc" data-title="3.9笔记" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/03/09/3-9%E7%AC%94%E8%AE%B0/" data-id="cm8tmig0r0002bcv8e1cpah6p" data-title="3.9笔记" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -318,7 +382,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/03/09/%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0%E6%8C%87%E5%8D%97/" data-id="cm8ssp22u0007vsv8bcb19wtr" data-title="图片上传指南" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/03/09/%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0%E6%8C%87%E5%8D%97/" data-id="cm8tmig0u0007bcv86qihf729" data-title="图片上传指南" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -358,7 +422,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/02/14/chenge-second-blog/" data-id="cm8ssp22t0005vsv8bud31zcb" data-title="chenge-second-blog" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/02/14/chenge-second-blog/" data-id="cm8tmig0t0004bcv81r9h9heq" data-title="chenge-second-blog" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -401,7 +465,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/01/20/chenge-first-blog/" data-id="cm8ssp22t0004vsv84onj7uir" data-title="chenge-first-blog" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/01/20/chenge-first-blog/" data-id="cm8tmig0u0006bcv81vetbibu" data-title="chenge-first-blog" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -452,7 +516,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/01/20/hello-world/" data-id="cm8ssp22u0006vsv89bxd8lty" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/01/20/hello-world/" data-id="cm8tmig0v0008bcv85nrr2nn3" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -495,6 +559,10 @@
       <ul>
         
           <li>
+            <a href="/2025/03/28/3-28%E7%AC%94%E8%AE%B0/">3.28笔记</a>
+          </li>
+        
+          <li>
             <a href="/2025/03/27/3-27%E7%AC%94%E8%AE%B0/">3.27笔记</a>
           </li>
         
@@ -508,10 +576,6 @@
         
           <li>
             <a href="/2025/03/09/%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0%E6%8C%87%E5%8D%97/">图片上传指南</a>
-          </li>
-        
-          <li>
-            <a href="/2025/02/14/chenge-second-blog/">chenge-second-blog</a>
           </li>
         
       </ul>
