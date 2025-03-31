@@ -69,6 +69,66 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-3-30笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/03/30/3-30%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time class="dt-published" datetime="2025-03-30T09:11:47.000Z" itemprop="datePublished">2025-03-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/03/30/3-30%E7%AC%94%E8%AE%B0/">3.30笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>1.获取一个记录的数据</p>
+<ul>
+<li><p>借此链接云端数据库</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> db = wx.<span class="property">cloud</span>.<span class="title function_">database</span>()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>指定数据库的名字，数据库里的集合</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.<span class="title function_">collection</span>(<span class="string">&#x27;todos&#x27;</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>集合中的某一条记录</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.<span class="title function_">collection</span>(<span class="string">&#x27;todos&#x27;</span>).<span class="title function_">doc</span>(<span class="string">&#x27;todo-identifiant-aleatoire&#x27;</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>我们已有一个 ID 为 <code>todo-identifiant-aleatoire</code> 的在集合上的记录，那么我们可以通过在该记录的引用调用 <code>get</code> 方法获取这个待办事项的数据</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">db.<span class="title function_">collection</span>(<span class="string">&#x27;todos&#x27;</span>).<span class="title function_">doc</span>(<span class="string">&#x27;todo-identifiant-aleatoire&#x27;</span>).<span class="title function_">get</span>(&#123;</span><br><span class="line">  <span class="attr">success</span>: <span class="keyword">function</span>(<span class="params">res</span>) &#123;</span><br><span class="line">    <span class="comment">// res.data 包含该记录的数据</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(res.<span class="property">data</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>嵌套式的结构</p>
+</li>
+<li><p>Promise 风格调用</p>
+</li>
+</ul>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">db.<span class="title function_">collection</span>(<span class="string">&#x27;todos&#x27;</span>).<span class="title function_">doc</span>(<span class="string">&#x27;todo-identifiant-aleatoire&#x27;</span>).<span class="title function_">get</span>().<span class="title function_">then</span>(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// res.data 包含该记录的数据</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(res.<span class="property">data</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>  链式结构then是正确的结果，catch是错误的结果</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/03/30/3-30%E7%AC%94%E8%AE%B0/" data-id="cm8wvq3lw0004egv85xy9bbwv" data-title="3.30笔记" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-3-28笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2025/03/28/3-28%E7%AC%94%E8%AE%B0/" class="article-date">
@@ -121,7 +181,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/03/28/3-28%E7%AC%94%E8%AE%B0/" data-id="cm8tmig0t0005bcv8ab769pyb" data-title="3.28笔记" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/03/28/3-28%E7%AC%94%E8%AE%B0/" data-id="cm8wvq3lx0006egv84x9mg9zp" data-title="3.28笔记" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -197,7 +257,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/03/27/3-27%E7%AC%94%E8%AE%B0/" data-id="cm8tmig0s0003bcv87jms5cmg" data-title="3.27笔记" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/03/27/3-27%E7%AC%94%E8%AE%B0/" data-id="cm8wvq3lr0001egv8ghjhego6" data-title="3.27笔记" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -242,7 +302,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/03/26/3-26%E7%AC%94%E8%AE%B0/" data-id="cm8tmig0o0000bcv8c1y33oou" data-title="3.26笔记" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/03/26/3-26%E7%AC%94%E8%AE%B0/" data-id="cm8wvq3lu0002egv877hzdoau" data-title="3.26笔记" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -333,7 +393,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/03/09/3-9%E7%AC%94%E8%AE%B0/" data-id="cm8tmig0r0002bcv8e1cpah6p" data-title="3.9笔记" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/03/09/3-9%E7%AC%94%E8%AE%B0/" data-id="cm8wvq3lv0003egv84385106u" data-title="3.9笔记" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -382,7 +442,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/03/09/%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0%E6%8C%87%E5%8D%97/" data-id="cm8tmig0u0007bcv86qihf729" data-title="图片上传指南" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/03/09/%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0%E6%8C%87%E5%8D%97/" data-id="cm8wvq3ly0008egv85ikm140n" data-title="图片上传指南" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -422,7 +482,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/02/14/chenge-second-blog/" data-id="cm8tmig0t0004bcv81r9h9heq" data-title="chenge-second-blog" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/02/14/chenge-second-blog/" data-id="cm8wvq3lx0007egv8eq08hcu3" data-title="chenge-second-blog" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -465,7 +525,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/01/20/chenge-first-blog/" data-id="cm8tmig0u0006bcv81vetbibu" data-title="chenge-first-blog" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/01/20/chenge-first-blog/" data-id="cm8wvq3lw0005egv8dgczbyph" data-title="chenge-first-blog" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -516,7 +576,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/01/20/hello-world/" data-id="cm8tmig0v0008bcv85nrr2nn3" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/01/20/hello-world/" data-id="cm8wvq3ly0009egv812vicgx8" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -559,6 +619,10 @@
       <ul>
         
           <li>
+            <a href="/2025/03/30/3-30%E7%AC%94%E8%AE%B0/">3.30笔记</a>
+          </li>
+        
+          <li>
             <a href="/2025/03/28/3-28%E7%AC%94%E8%AE%B0/">3.28笔记</a>
           </li>
         
@@ -572,10 +636,6 @@
         
           <li>
             <a href="/2025/03/09/3-9%E7%AC%94%E8%AE%B0/">3.9笔记</a>
-          </li>
-        
-          <li>
-            <a href="/2025/03/09/%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0%E6%8C%87%E5%8D%97/">图片上传指南</a>
           </li>
         
       </ul>
