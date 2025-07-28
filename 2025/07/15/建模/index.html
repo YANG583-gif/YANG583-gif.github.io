@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>建模 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="第五章：数据建模第一节——建模三要素：实体、链接、属性概念  实体 标识具有唯一性(内在区分实体指标)   身份证号 标签不具有唯一性（外在表现的名称）姓名  链接 链接分类一：链接分为有向链接和无向链接  链接分类二：链接分为单一、定向和多重  第二节——常见数据类型如何建模？1.构建资金数据模型主要是以交易卡号，对方卡号为主，通过交易金额，交易时间，收付标志建立联系  点击新建关系模型 点击画">
+<meta property="og:type" content="article">
+<meta property="og:title" content="建模">
+<meta property="og:url" content="http://example.com/2025/07/15/%E5%BB%BA%E6%A8%A1/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="第五章：数据建模第一节——建模三要素：实体、链接、属性概念  实体 标识具有唯一性(内在区分实体指标)   身份证号 标签不具有唯一性（外在表现的名称）姓名  链接 链接分类一：链接分为有向链接和无向链接  链接分类二：链接分为单一、定向和多重  第二节——常见数据类型如何建模？1.构建资金数据模型主要是以交易卡号，对方卡号为主，通过交易金额，交易时间，收付标志建立联系  点击新建关系模型 点击画">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/imgs/image-20250715222409001.png">
+<meta property="og:image" content="http://example.com/imgs/image-20250715222542448.png">
+<meta property="og:image" content="http://example.com/imgs/image-20250715222712016.png">
+<meta property="og:image" content="http://example.com/imgs/image-20250715223303394.png">
+<meta property="og:image" content="http://example.com/imgs/image-20250715223358124.png">
+<meta property="og:image" content="http://example.com/imgs/image-20250715223627283.png">
+<meta property="og:image" content="http://example.com/imgs/image-20250715224145954.png">
+<meta property="og:image" content="http://example.com/imgs/image-20250722215624210.png">
+<meta property="og:image" content="http://example.com/imgs/image-20250722221511008.png">
+<meta property="og:image" content="http://example.com/imgs/image-20250727085809642.png">
+<meta property="og:image" content="http://example.com/imgs/image-20250727090323823.png">
+<meta property="og:image" content="http://example.com/imgs/image-20250727103403392.png">
+<meta property="og:image" content="http://example.com/imgs/image-20250727104113353.png">
+<meta property="og:image" content="http://example.com/imgs/image-20250727104649199.png">
+<meta property="og:image" content="http://example.com/imgs/image-20250727105858613.png">
+<meta property="og:image" content="http://example.com/imgs/image-20250727110403638.png">
+<meta property="og:image" content="http://example.com/imgs/image-20250727110736926.png">
+<meta property="og:image" content="http://example.com/imgs/image-20250727111051549.png">
+<meta property="og:image" content="http://example.com/imgs/image-20250727160707626.png">
+<meta property="og:image" content="http://example.com/imgs/image-20250727161229376.png">
+<meta property="og:image" content="http://example.com/imgs/image-20250727163337975.png">
+<meta property="og:image" content="http://example.com/imgs/image-20250727163727577.png">
+<meta property="og:image" content="http://example.com/imgs/image-20250727164126707.png">
+<meta property="og:image" content="http://example.com/imgs/image-20250727171315965.png">
+<meta property="og:image" content="http://example.com/imgs/image-20250727171840057.png">
+<meta property="og:image" content="http://example.com/imgs/image-20250727171921496.png">
+<meta property="article:published_time" content="2025-07-15T14:19:07.000Z">
+<meta property="article:modified_time" content="2025-07-28T14:16:39.061Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/imgs/image-20250715222409001.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-建模" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/07/15/%E5%BB%BA%E6%A8%A1/" class="article-date">
+  <time class="dt-published" datetime="2025-07-15T14:19:07.000Z" itemprop="datePublished">2025-07-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      建模
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="第五章：数据建模"><a href="#第五章：数据建模" class="headerlink" title="第五章：数据建模"></a>第五章：数据建模</h1><h2 id="第一节——建模三要素：实体、链接、属性概念"><a href="#第一节——建模三要素：实体、链接、属性概念" class="headerlink" title="第一节——建模三要素：实体、链接、属性概念"></a>第一节——建模三要素：实体、链接、属性概念</h2><p><img src="/../imgs/image-20250715222409001.png" alt="image-20250715222409001"></p>
+<p><img src="/../imgs/image-20250715222542448.png" alt="image-20250715222542448"></p>
+<h4 id="实体"><a href="#实体" class="headerlink" title="实体"></a>实体</h4><p><img src="/../imgs/image-20250715222712016.png" alt="image-20250715222712016"></p>
+<p>标识具有唯一性(内在区分实体指标)   身份证号</p>
+<p>标签不具有唯一性（外在表现的名称）姓名</p>
+<p><img src="/../imgs/image-20250715223303394.png" alt="image-20250715223303394"></p>
+<h4 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h4><p><img src="/../imgs/image-20250715223358124.png" alt="image-20250715223358124"></p>
+<p><strong>链接分类一</strong>：链接分为有向链接和无向链接</p>
+<p><img src="/../imgs/image-20250715223627283.png" alt="image-20250715223627283"></p>
+<p><strong>链接分类二</strong>：链接分为单一、定向和多重</p>
+<p><img src="/../imgs/image-20250715224145954.png" alt="image-20250715224145954"></p>
+<h2 id="第二节——常见数据类型如何建模？"><a href="#第二节——常见数据类型如何建模？" class="headerlink" title="第二节——常见数据类型如何建模？"></a>第二节——常见数据类型如何建模？</h2><h3 id="1-构建资金数据模型"><a href="#1-构建资金数据模型" class="headerlink" title="1.构建资金数据模型"></a>1.构建资金数据模型</h3><p>主要是以交易卡号，对方卡号为主，通过交易金额，交易时间，收付标志建立联系</p>
+<p><img src="/../imgs/image-20250722215624210.png" alt="image-20250722215624210"></p>
+<p>点击新建关系模型</p>
+<p>点击画布上新建的实体可以编辑实体类型</p>
+<p>编辑链接属性中，如果链接方向不确定，要根据具体情况来分析，选择单一列进行设置</p>
+<p>可以通过格式化更改线条的粗细颜色等属性</p>
+<h3 id="2-构建资金数据卡号-IP-MAC模型"><a href="#2-构建资金数据卡号-IP-MAC模型" class="headerlink" title="2.构建资金数据卡号-IP-MAC模型"></a>2.构建资金数据卡号-IP-MAC模型</h3><p><img src="/../imgs/image-20250722221511008.png" alt="image-20250722221511008"></p>
+<p>MAC 地址（Media Access Control Address），即媒体访问控制地址，也被称为物理地址，是网络设备（如网卡、路由器、交换机等）在出厂时由厂商烧录在硬件中的唯一标识符，用于在局域网中标识设备的身份。物理地址，由设备厂商在生产时烧录到硬件（如网卡）中，通常固定不变（除非手动修改）。</p>
+<p>IP 地址（Internet Protocol Address）是互联网协议地址的简称，是分配给网络中每台设备（如计算机、手机、服务器、路由器等）的唯一数字标识，用于在互联网或局域网中定位和识别设备，实现设备之间的数据通信。逻辑地址，基于软件配置或网络协议分配，可动态变更。</p>
+<p>简单来说，IP 地址是设备在 “广域网中的门牌号”，负责跨网络定位；MAC 地址是设备的 “硬件身份证”，负责局域网内的直接通信。</p>
+<p>是否存在团伙作案</p>
+<h3 id="3-构建话单数据模型"><a href="#3-构建话单数据模型" class="headerlink" title="3.构建话单数据模型"></a>3.构建话单数据模型</h3><p><img src="/../imgs/image-20250727085809642.png" alt="image-20250727085809642"></p>
+<h3 id="4-构建人员数据模型"><a href="#4-构建人员数据模型" class="headerlink" title="4.构建人员数据模型"></a>4.构建人员数据模型</h3><p><img src="/../imgs/image-20250727090323823.png" alt="image-20250727090323823"></p>
+<p>当遇到金额一类的数据时，类型选择浮点型，可以保留小数。</p>
+<p>可以在图表设置中更改在图中未显示的内容。</p>
+<p>处于顶点位置的人，所有关系都是发散类型的。可以利用过滤中的“入向连接数为0”进行筛选。在进行直角数据布局。</p>
+<h2 id="第三节——如何梳理特定群体人物之间的关系"><a href="#第三节——如何梳理特定群体人物之间的关系" class="headerlink" title="第三节——如何梳理特定群体人物之间的关系"></a>第三节——如何梳理特定群体人物之间的关系</h2><h4 id="查找特定人物之间的关系"><a href="#查找特定人物之间的关系" class="headerlink" title="查找特定人物之间的关系"></a>查找特定人物之间的关系</h4><p>1.如果是两个单独个体之间：</p>
+<p><img src="/../imgs/image-20250727103403392.png" alt="image-20250727103403392"></p>
+<p>2.如果是多个集团之间：查找集团路径</p>
+<h4 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h4><p>根据数据的具体情况，确定人物之间的关系方向</p>
+<h4 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h4><p><img src="/../imgs/image-20250727104113353.png" alt="image-20250727104113353"></p>
+<h1 id="第六章：数据清洗"><a href="#第六章：数据清洗" class="headerlink" title="第六章：数据清洗"></a>第六章：数据清洗</h1><p>数据清洗（Data Cleaning）是数据预处理中至关重要的一步，指通过一系列技术手段识别、纠正或移除数据集中的错误、不一致、重复、缺失、异常等问题，最终得到高质量、可用的数据，为后续的分析、建模或应用奠定基础。</p>
+<p>简单来说，数据清洗就像 “整理房间”—— 在一堆杂乱的信息中，挑出有用的、修正错误的、扔掉无用的，让数据变得 “干净”“整齐”，避免脏数据（Dirty Data）影响最终结果的准确性。</p>
+<h2 id="第一节——通讯数据清洗-通话时长分析"><a href="#第一节——通讯数据清洗-通话时长分析" class="headerlink" title="第一节——通讯数据清洗-通话时长分析"></a>第一节——通讯数据清洗-通话时长分析</h2><p>数据清洗中存在不规范、不统一的格式</p>
+<p><img src="/../imgs/image-20250727104649199.png" alt="image-20250727104649199"></p>
+<p><img src="/../imgs/image-20250727105858613.png" alt="image-20250727105858613"></p>
+<p><img src="/../imgs/image-20250727110403638.png" alt="image-20250727110403638"></p>
+<p>移除字符，需要重复多次，一次移除只能移除一类字符。</p>
+<p><img src="/../imgs/image-20250727110736926.png" alt="image-20250727110736926"></p>
+<p><img src="/../imgs/image-20250727111051549.png" alt="image-20250727111051549"></p>
+<p>漫游（Roaming）当你带着手机从自己手机号所属运营商的信号覆盖区域，到了另一个运营商的信号覆盖区域（可能是国内其他地区，也可能是国外），手机能自动连接当地运营商的网络并保持通信，这就是漫游。</p>
+<p>除了短信这一类没有通话时长，还有漫游的特殊情况。</p>
+<h2 id="第二节——日期时间"><a href="#第二节——日期时间" class="headerlink" title="第二节——日期时间"></a>第二节——日期时间</h2><p><img src="/../imgs/image-20250727160707626.png" alt="image-20250727160707626"></p>
+<h4 id="1-利用Excel表格进行操作"><a href="#1-利用Excel表格进行操作" class="headerlink" title="1.利用Excel表格进行操作"></a>1.利用Excel表格进行操作</h4><blockquote>
+<p>[!IMPORTANT]</p>
+<h3 id="Excel-中的-TEXT-函数"><a href="#Excel-中的-TEXT-函数" class="headerlink" title="Excel 中的 TEXT 函数"></a><strong>Excel 中的 TEXT 函数</strong></h3></blockquote>
+<ul>
+<li><p><strong>用途</strong>：将数值转换为指定格式的文本字符串。</p>
+</li>
+<li><p><strong>语法</strong>：TEXT(value, format_text)</p>
+</li>
+</ul>
+<p><strong>示例</strong>：</p>
+<p>excel</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">=<span class="built_in">TEXT</span>(<span class="number">20231015</span>, <span class="string">&quot;yyyy-mm-dd&quot;</span>)  # 结果：<span class="string">&quot;2023-10-15&quot;</span></span><br><span class="line">=<span class="built_in">TEXT</span>(<span class="number">1234.56</span>, <span class="string">&quot;¥#,##0.00&quot;</span>)    # 结果：<span class="string">&quot;¥1,234.56&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/../imgs/image-20250727161229376.png" alt="image-20250727161229376"></p>
+<p><img src="/../imgs/image-20250727163337975.png" alt="image-20250727163337975"></p>
+<p>A2是日期，B2是时间。用Excel表格将日期和时间合并。</p>
+<h4 id="2-新解决方案"><a href="#2-新解决方案" class="headerlink" title="2.新解决方案"></a>2.新解决方案</h4><p><img src="/../imgs/image-20250727163727577.png" alt="image-20250727163727577"></p>
+<p><img src="/../imgs/image-20250727164126707.png" alt="image-20250727164126707"></p>
+<p>清洗每一类数据时，都要输入原格式</p>
+<p><img src="/../imgs/image-20250727171315965.png" alt="image-20250727171315965"></p>
+<h2 id="第三节——银行交易篇：借贷标志"><a href="#第三节——银行交易篇：借贷标志" class="headerlink" title="第三节——银行交易篇：借贷标志"></a>第三节——银行交易篇：借贷标志</h2><p><img src="/../imgs/image-20250727171840057.png" alt="image-20250727171840057"></p>
+<p><img src="/../imgs/image-20250727171921496.png" alt="image-20250727171921496"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/07/15/%E5%BB%BA%E6%A8%A1/" data-id="cmdn70gm3000ayov819zcghkq" data-title="建模" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2025/07/13/7-31%E6%99%BA%E5%99%A8%E4%BA%91%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">7.31智器云笔记</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/07/">July 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/03/">March 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/02/">February 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/01/">January 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/07/15/%E5%BB%BA%E6%A8%A1/">建模</a>
+          </li>
+        
+          <li>
+            <a href="/2025/07/13/7-31%E6%99%BA%E5%99%A8%E4%BA%91%E7%AC%94%E8%AE%B0/">7.31智器云笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/30/3-30%E7%AC%94%E8%AE%B0/">3.30笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/28/3-28%E7%AC%94%E8%AE%B0/">3.28笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/27/3-27%E7%AC%94%E8%AE%B0/">3.27笔记</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
